@@ -3,7 +3,7 @@ FROM python:3.11-alpine
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-ENV PORT 8001
+ENV PORT 8000
 
 
 # Install system dependencies specific to Alpine Linux
@@ -14,7 +14,7 @@ RUN apk add --no-cache \
     binutils \
     proj-dev
 
-    
+
 # Create and set work directory called `app`
 WORKDIR /app
 
@@ -23,7 +23,7 @@ COPY requirements.txt .
 
 RUN set -ex && \
     pip install --upgrade pip && \
-    pip install -r /app/requirements.txt 
+    pip install -r /app/requirements.txt
 
 
 # Copy local project
