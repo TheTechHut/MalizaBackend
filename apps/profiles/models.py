@@ -18,7 +18,7 @@ class Profile(models.Model):
         User, on_delete=models.CASCADE, related_name="profile", related_query_name="profile", primary_key=True, unique=True, default=1
     )
     phone_number = PhoneNumberField( unique=True)
-           
+
     profile_photo = models.ImageField(
         verbose_name=_("Profile Photo"), upload_to="profiles/", blank=True, null=True
     )
@@ -28,7 +28,7 @@ class Profile(models.Model):
         default=Gender.OTHER,
         max_length=20,
     )
-    
+
     city = models.CharField(
         verbose_name=_("City"),
         max_length=180,
@@ -36,7 +36,7 @@ class Profile(models.Model):
         blank=False,
         null=False,
     )
-    
-    
+
+
     def __str__(self):
         return f"{self.user.username}'s profile"

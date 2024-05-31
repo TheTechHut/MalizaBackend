@@ -1,5 +1,8 @@
 from django.db import models
-from apps.user.models import User
+#from apps.user.models import User
+from django.conf import settings
+
+User = settings.AUTH_USER_MODEL
 
 
 class Payment(models.Model):
